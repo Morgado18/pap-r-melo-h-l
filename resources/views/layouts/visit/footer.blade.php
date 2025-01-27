@@ -21,9 +21,9 @@
             <div class="col-lg-2 col-6 footer-links">
                 <h4>Links Úteis</h4>
                 <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Sobre Nós</a></li>
-                    <li><a href="#">Serviços</a></li>
+                    <li><a href="/">Início</a></li>
+                    <li><a href="/#about">Sobre Nós</a></li>
+                    <li><a href="/#services">Serviços</a></li>
                     <li><a href="#">Termos de Serviço</a></li>
                     <li><a href="#">Política de Privacidade</a></li>
                 </ul>
@@ -33,7 +33,7 @@
                 <h4>Nossos Serviços</h4>
                 <ul>
                     <li><a href="#">Conexão com Produtores</a></li>
-                    <li><a href="#">Listagem de Produtos</a></li>
+                    <li><a href="{{ route('visit.products') }}">Listagem de Produtos</a></li>
                     <li><a href="#">Avaliações de Produtores</a></li>
                     <li><a href="#">Suporte ao Consumidor</a></li>
                 </ul>

@@ -19,7 +19,7 @@
                 <li><a href="/#about">Sobre nós</a></li>
                 <li><a href="/#services">Serviços</a></li>
                 <li><a href="/#contact">Contacto</a></li>
-                <li class="dropdown"><a href="cadastro.html"><span>Entrar</span> <i
+                <li class="dropdown"><a href="cadastro.html"><span>Começar como</span> <i
                             class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
                         <li><a href="{{ route('create_account.producer') }}">Produtor</a></li>
@@ -27,6 +27,7 @@
                     </ul>
                 </li>
                 <li><a href="{{ route('visit.products') }}" @if(Route::is('visit.products')) class="active" @endif>Produtos</a></li>
+                <li><a href="{{ route('login') }}">Iniciar sessão</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
