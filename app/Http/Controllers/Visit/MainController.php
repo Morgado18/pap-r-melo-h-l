@@ -13,4 +13,12 @@ class MainController extends Controller
         return view('visit.products');
     }
 
+    public function view_create_buyer(){
+        return view('visit.buyer');
+    }
+    public function view_create_producer()
+    {
+        return view('visit.producer');
+    }
+
 }

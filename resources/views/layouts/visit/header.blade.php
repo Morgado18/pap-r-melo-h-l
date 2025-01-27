@@ -22,8 +22,8 @@
                 <li class="dropdown"><a href="cadastro.html"><span>Entrar</span> <i
                             class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
-                        <li><a href="produtor.html">Produtor</a></li>
-                        <li><a href="comprador.html">Comprador</a></li>
+                        <li><a href="{{ route('create_account.producer') }}">Produtor</a></li>
+                        <li><a href="{{ route('create_account.buyer') }}">Comprador</a></li>
                     </ul>
                 </li>
                 <li><a href="{{ route('visit.products') }}" @if(Route::is('visit.products')) class="active" @endif>Produtos</a></li>
