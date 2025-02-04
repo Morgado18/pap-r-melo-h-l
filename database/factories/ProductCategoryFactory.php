@@ -17,7 +17,19 @@ class ProductCategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->unique()->randomElement([
+                'Grãos e Cereais',
+                'Frutas',
+                'Hortaliças e Vegetais',
+                'Leguminosas',
+                'Raízes e Tubérculos',
+                'Ervas e Temperos',
+                'Flores e Plantas Ornamentais',
+                'Produtos de Origem Animal ',
+                'Sementes e Mudas',
+                'Insumos Agrícolas',
+                'Outro',
+            ])
         ];
     }
 }

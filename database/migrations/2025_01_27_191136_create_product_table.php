@@ -19,7 +19,7 @@ return new class extends Migration
             $table->double('price');
             $table->integer('average_rating')->nullable(true);
             $table->integer('min_quant_to_buy')->nullable(true);
-            $table->string('img_path')->nullable(false);
+            $table->json('img_path')->nullable(true);
             $table->string('description', 255)->nullable(false);
             $table->foreignId('producer_id')->constrained()->onDelete('cascade')->references('id')->on('producer');
             $table->foreignId('product_category_id')->constrained()->onDelete('cascade')->references('id')->on('product_category');

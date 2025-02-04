@@ -17,7 +17,11 @@ class AccessLevelFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'access' => $this->faker->unique()->randomElement([
+                'Administrador',
+                'Produtor',
+                'Comprador',
+            ])
         ];
     }
 }

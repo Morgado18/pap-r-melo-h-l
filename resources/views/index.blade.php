@@ -443,4 +443,19 @@
 
     </section><!-- /Contact Section -->
 
+        @session("unauthorizated")
+
+            <script>
+                Swal.fire({
+                    title: '{{ session('unauthorizated') }}',
+                    icon: 'error',
+                    width: 400,
+                    heightAuto: false,
+                    showConfirmButton: false,
+                    timer: 5000,
+                });
+            </script>
+
+        @endsession
+
 @endsection

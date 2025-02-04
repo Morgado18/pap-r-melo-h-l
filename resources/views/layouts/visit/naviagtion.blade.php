@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-6">
                 <ol>
-                    <li><a href="index.html">Página inicial</a></li>
+                    <li><a href="/">Página inicial</a></li>
                     <li class="current">@yield('location1')</li>
                 </ol>
             </div>

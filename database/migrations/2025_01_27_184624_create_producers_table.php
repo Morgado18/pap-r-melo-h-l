@@ -16,8 +16,8 @@ return new class extends Migration {
             $table->string('company_name')->nullable(true);
             $table->string('phone_number');
             $table->string('address');
-            $table->string('adress_reference')->nullable(true);
-            $table->string('decription')->nullable(true);
+            $table->string('address_reference')->nullable(true);
+            $table->string('description')->nullable(true);
             $table->foreignId('user_id')->constrained()->onDelete('cascade')->references('id')->on('users');
             $table->timestamps();
             $table->softDeletes();

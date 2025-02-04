@@ -46,132 +46,92 @@
                     width: 200px; height: 250px; overflow: hidden;
                 }
                 .productImg{
-                    /* width: 100%; */
-                    /* height: 100%; */
-                    /* object-fit: cover; */
-                    width: 100%; height: 100%; object-fit: contain;
+                    width: 100%; height: 100%; object-fit: contain; transition: 0.5s;
+                }
+                .productImg:hover{
+                    transform: scale(0.9)
                 }
                 #info_min_text{
                     font-size: 12px;
                 }
                 .product_name{
                     font-size: 15px;
+                    margin-top: 0.3rem;
+                    margin-bottom: 0.3rem;
+                    color: #000;
+                    font-weight: 500;
+                }
+                .product_price{
+                    font-size: 14px;
+                    color: gray;
+                    font-weight: 100;
+                }
+                .product{
+                    width: 250px;
+                    overflow: hidden;
+                }
+                #inline{
+                    display: flex;
+                }
+                .lado{
+                    flex: 50%;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                }
+                .right{
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
                 }
             </style>
 
-          <div class="col-lg-2 h-100">
-            <article>
+          @foreach ($data['products'] as $product)
 
-              <div class="post-img">
-                <img src="{{ asset('storage/products/batatas.jpeg') }}" alt="" class="productImg"> {{-- img-fluid --}}
-              </div>
+            <div class="col-lg-2 h-100 product">
 
-              <p class="post-category" id="info_min_text">Category: </p>
+                <a href="">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="product_img">
+                                <img src="{{ asset('storage/products/cenoura.jpeg') }}" alt="" class="productImg"> {{-- img-fluid --}}
+                            </div>
+                        </div>
+                    </div>
+                </a>
 
-              <h2 class="product_name">
-                <span>Batata Rena (1 Cesto)</span>
-              </h2>
-
-              <p class="post-category" id="info_min_text">Price: <strong>3000,00 Kz</strong></p>
-              <p class="post-category" id="info_min_text">In Stock: <strong>37</strong></p>
-              <p class="post-category" id="info_min_text">Avaliações média: <strong>78</strong></p>
-
-              <center>
-                {{-- <button class="bg-info btn"> --}}
-                        <a href="" class="text-muted">
-                    <sup>
-                            {{-- <i class="fa-solid fa-cart-shopping"></i>
-                            <br> --}}
-                            Adicionar ao <i class="fa-solid fa-cart-shopping"></i>
-
-                    </sup>
-               {{--  </button> --}}</a>
-              </center>
-
-              <center>
-                <sub>
-                    <a href="" class="text-primary">Mais informações</a>
-                </sub>
-              </center>
-
-            </article>
-          </div><!-- End post list item -->
-
-        <div class="col-lg-2 h-100">
-            <article>
-
-                <div class="post-img">
-                    <img src="{{ asset('storage/products/cenoura.jpeg') }}" alt="" class="productImg"> {{-- img-fluid --}}
+                <div class="border p-2 mt-2" id="inline">
+                    <div class="lado">
+                        <span class="product_name">
+                            <span>{{ $product->name }}</span>
+                        </span>
+                        <p class="product_price">
+                            <strong>{{ number_format($product->price, '2', ',', '.') }}Kzs</strong>
+                        </p>
+                    </div>
+                    <div class="lado right">
+                        {{-- <a href="#" class="text-muted">
+                            <button class="btn border">
+                                <i class="fa-solid fa-cart-plus text-success"></i>
+                            </button>
+                        </a> --}}
+                    <form action="{{ route('cart.add', $product->id) }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="name" value="{{ $product->name }}">
+                        <input type="hidden" name="price" value="{{ $product->price }}">
+                        <input type="hidden" name="quantity" value="1">
+                        <button type="submit" class="btn border">
+                            <i class="fa-solid fa-cart-plus text-success"></i>
+                        </button>
+                    </form>
+                    </div>
                 </div>
 
-                <p class="post-category" id="info_min_text">Category: </p>
 
-                <h2 class="product_name">
-                    <span>Cenoura (7 Cesto<sub>s</sub> )</span>
-                </h2>
+            </div>
 
-                <p class="post-category" id="info_min_text">Price: <strong>27000,00 Kz</strong></p>
-                <p class="post-category" id="info_min_text">In Stock: <strong>72</strong></p>
-                <p class="post-category" id="info_min_text">Avaliações média: <strong>102</strong></p>
+          @endforeach
 
-                <center>
-                    {{-- <button class="bg-info btn"> --}}
-                        <a href="" class="text-muted">
-                            <sup>
-                                {{-- <i class="fa-solid fa-cart-shopping"></i>
-                                <br> --}}
-                                Adicionar ao <i class="fa-solid fa-cart-shopping"></i>
-
-                            </sup>
-                            {{-- </button> --}}</a>
-                </center>
-
-                <center>
-                    <sub>
-                        <a href="" class="text-primary">Mais informações</a>
-                    </sub>
-                </center>
-
-            </article>
-        </div><!-- End post list item -->
-
-        <div class="col-lg-2 h-100">
-            <article>
-
-              <div class="post-img">
-                <img src="{{ asset('storage/products/batatas.jpeg') }}" alt="" class="productImg"> {{-- img-fluid --}}
-              </div>
-
-              <p class="post-category" id="info_min_text">Category: </p>
-
-              <h2 class="product_name">
-                <span>Batata Rena (1 Cesto)</span>
-              </h2>
-
-              <p class="post-category" id="info_min_text">Price: <strong>3000,00 Kz</strong></p>
-              <p class="post-category" id="info_min_text">In Stock: <strong>37</strong></p>
-              <p class="post-category" id="info_min_text">Avaliações média: <strong>78</strong></p>
-
-              <center>
-                {{-- <button class="bg-info btn"> --}}
-                        <a href="" class="text-muted">
-                    <sup>
-                            {{-- <i class="fa-solid fa-cart-shopping"></i>
-                            <br> --}}
-                            Adicionar ao <i class="fa-solid fa-cart-shopping"></i>
-
-                    </sup>
-               {{--  </button> --}}</a>
-              </center>
-
-              <center>
-                <sub>
-                    <a href="" class="text-primary">Mais informações</a>
-                </sub>
-              </center>
-
-            </article>
-          </div><!-- End post list item -->
 
         </div>
       </div>
@@ -199,5 +159,20 @@
     </section><!-- /Blog Pagination Section -->
 
   </main>
+
+    @session("success")
+
+        <script>
+            Swal.fire({
+                title: '{{ session('success') }}',
+                icon: 'success',
+                width: 400,
+                heightAuto: false,
+                showConfirmButton: false,
+                timer: 5000,
+            });
+        </script>
+
+    @endsession
 
 @endsection

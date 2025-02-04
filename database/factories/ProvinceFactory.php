@@ -16,8 +16,31 @@ class ProvinceFactory extends Factory
      */
     public function definition(): array
     {
+        
         return [
-            //
+            'name' => $this->faker->unique()->randomElement([
+                'Bengo',
+                'Benguela',
+                'Bié',
+                'Cabinda',
+                'Cunene',
+                'Huambo',
+                'Huíla',
+                'Cuando ',
+                'Cubango',
+                'Kwanza Norte',
+                'Kwanza Sul',
+                'Luanda',
+                'Lunda Norte',
+                'Lunda Sul',
+                'Malange',
+                'Moxico',
+                'Namibe',
+                'Uíge',
+                'Zaire',
+                'Moxico Leste',
+                'Icolo e Bengo',
+            ])
         ];
     }
 }

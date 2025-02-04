@@ -7,7 +7,7 @@
     <meta name="keywords" content="">
 
     <!-- Favicons -->
-    <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('imgs/oficialItel.png') }}">
     <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Fonts -->
@@ -28,6 +28,7 @@
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.css') }}">
+    <script src="{{ asset('swalert/sweetalert2@11.js') }}"></script>
 
     <!-- =======================================================
   * Template Name: Append

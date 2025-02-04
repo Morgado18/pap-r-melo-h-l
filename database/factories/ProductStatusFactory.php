@@ -17,7 +17,13 @@ class ProductStatusFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'status' => $this->faker->unique()->randomElement([
+                'Disponível',
+                'Indisponível',
+                'Pendente',
+                'Inativo',
+                'Esgotado'
+            ])
         ];
     }
 }

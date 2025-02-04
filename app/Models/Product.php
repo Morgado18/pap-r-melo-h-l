@@ -20,7 +20,17 @@ class Product extends Model
     protected static function booted()
     {
         static::creating(function ($product) {
-            $product->slug = Str::slug($product->name);
+            //$product->slug = Str::slug($product->name);
+
+            $slug = Str::slug($product->name);
+            $originalSlug = $slug;
+            $i = 1;
+            while (Product::where('slug', $slug)->exists()) {
+                $slug = $originalSlug . '-' . $i;
+                $i++;
+            }
+            $product->slug = $slug;
+
         });
     }
 }

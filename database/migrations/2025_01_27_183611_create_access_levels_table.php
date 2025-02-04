@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('access_level', function (Blueprint $table) {
             $table->id();
-            $table->string('acess', 50);
+            $table->string('access', 50);
             $table->timestamps();
             $table->softDeletes();
         });
